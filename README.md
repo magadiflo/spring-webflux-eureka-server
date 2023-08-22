@@ -25,10 +25,6 @@ Finalmente, las dependencias incluidas en este proyecto de Eureka Server son:
 <!--Versión de Spring Cloud: 2022.0.4-->
 <dependencies>
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-webflux</artifactId>
-    </dependency>
-    <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
     </dependency>
@@ -40,11 +36,6 @@ Finalmente, las dependencias incluidas en este proyecto de Eureka Server son:
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>io.projectreactor</groupId>
-        <artifactId>reactor-test</artifactId>
         <scope>test</scope>
     </dependency>
 </dependencies>
@@ -91,3 +82,11 @@ eureka.client.fetch-registry=false
 Si ejecutamos el proyecto, podemos ver eureka server en funcionamiento a través del navegador `http://localhost:8761/`:
 
 ![dashboard-eureka-server](./assets/dashboard-eureka-server.png)
+
+## Ejecutando Eureka Server y Clientes Eureka
+
+Pondremos en funcionamiento los proyectos, primero debemos iniciar **Euera Server** y luego iniciar las **aplicaciones
+que son clientes de eureka**, finalmente si todo está funcionando como se espera, los clientes de eureka se registrarán
+en el servidor de eureka, esto lo podemos observar en el navegador tal como se muestra en la imagen inferior:
+
+![eureka-server-con-clientes-eureka](./assets/eureka-server-con-clientes-eureka.png)
